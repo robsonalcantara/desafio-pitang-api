@@ -1,6 +1,6 @@
-FROM openjdk:17
+FROM openjdk:21-jdk-slim
 WORKDIR /app
-COPY ./target/*.jar ./rhp-painel-v2.jar
+COPY ./target/*.jar ./desafio-pitang-api-v1.jar
 EXPOSE 8080
 
-ENTRYPOINT java -jar rhp-painel-v2.jar
+ENTRYPOINT java -jar desafio-pitang-api-v1.jar
