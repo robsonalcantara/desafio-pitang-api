@@ -1,16 +1,6 @@
-FROM ubuntu:latest AS build
-
-RUN apt-get update
-RUN apt-get install openjdk-21-jdk -y
-COPY . .
-
-RUN apt-get install maven -y
-RUN mvn clean install
-
-FROM openjdk:21-jdk-slim
-
+FROM openjdk:17
+WORKDIR /app
+COPY ./target/*.jar ./rhp-painel-v2.jar
 EXPOSE 8080
 
-COPY --from=build /target/desafio-pitang-api-1.0.0-SNAPSHOT.jar app.jar
-
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+ENTRYPOINT java -jar rhp-painel-v2.jar
