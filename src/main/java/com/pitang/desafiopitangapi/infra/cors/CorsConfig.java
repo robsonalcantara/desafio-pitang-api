@@ -18,7 +18,11 @@ public class CorsConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of(frontUrl)); // origem exata, sem barra
+        configuration.addAllowedOrigin("https://desafio-pitang-angular.vercel.app");
+        //configuration.setAllowedOrigins("https://desafio-pitang-angular.vercel.app"); // origem exata, sem barra
+        configuration.addAllowedMethod("*");
+        configuration.addAllowedHeader("*");
+        configuration.setAllowCredentials(true);
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
