@@ -23,7 +23,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
  * API endpoints.
  */
 @Configuration
-@EnableWebSecurity
 public class SecurityConfig {
 
     @Autowired
