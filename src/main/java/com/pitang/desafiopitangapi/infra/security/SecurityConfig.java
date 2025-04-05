@@ -44,7 +44,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
-                .cors(cors -> cors.disable()) // OU, se configurado corretamente, use .cors()
+                .cors(cors -> cors.configure(http)) // OU, se configurado corretamente, use .cors()
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/api/**").permitAll()
                         .anyRequest().authenticated()
