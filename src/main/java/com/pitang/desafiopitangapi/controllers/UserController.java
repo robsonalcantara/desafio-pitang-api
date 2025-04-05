@@ -40,6 +40,7 @@ public class UserController {
      * @author Robson Rodrigues
      * @return A {@link ResponseEntity} containing a list of {@link UserDTO} objects.
      */
+    @CrossOrigin(origins = "https://desafio-pitang-angular.vercel.app")
     @GetMapping
     public ResponseEntity<List<UserDTO>> findAll() {
         return ResponseEntity.ok(userService.findAll());
